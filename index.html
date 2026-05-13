@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nets Beds</title>
+
 <link rel="icon" type="image/png" href="Logo.png">
 
 <style>
@@ -59,9 +60,8 @@ nav a {
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    
-    /* Background setup */
-    background: 
+
+    background:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
         url("Logo.png") center/contain no-repeat;
 }
@@ -112,17 +112,24 @@ nav a {
     font-weight: bold;
 }
 
-/* PRICE TABLE — REVAMPED */
+/* RESPONSIVE PRICE TABLE */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
 
 .price-table {
     width: 100%;
     max-width: 1000px;
+    min-width: 700px;
     margin: auto;
     border-collapse: collapse;
-    overflow: hidden;
     border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 8px 18px rgba(0,0,0,0.08);
     background: white;
+    table-layout: fixed;
 }
 
 .price-table thead {
@@ -132,7 +139,13 @@ nav a {
 
 .price-table th,
 .price-table td {
-    padding: 14px 12px;
+    padding: 16px 14px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.price-table th {
+    font-size: 15px;
 }
 
 .price-table tbody tr {
@@ -159,12 +172,14 @@ form {
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-form input, form select {
+form input,
+form select {
     width: 100%;
     padding: 12px;
     margin-bottom: 14px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 button {
@@ -215,6 +230,7 @@ footer {
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 .site-header {
     background: #0f172a;
     color: white;
@@ -227,6 +243,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .logo-area img {
@@ -235,194 +252,320 @@ footer {
     border-radius: 8px;
 }
 
+/* MOBILE */
 
+@media (max-width: 768px) {
+
+    .hero {
+        font-size: 24px;
+        padding: 20px;
+    }
+
+    .price-table {
+        min-width: 650px;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+}
 
 </style>
 </head>
 
 <body>
 
-    <header class="site-header">
+<header class="site-header">
 
-        <div class="logo-area">
+    <div class="logo-area">
         <img src="Logo.png" alt="Nets Beds Logo">
+
         <div>
-        <h1>Nets Beds</h1>
-        <p>Quality Sleep • Best Prices</p>
+            <h1>Nets Beds</h1>
+            <p>Quality Sleep • Best Prices</p>
         </div>
-        </div>
-        
-        </header>        
+    </div>
+
+</header>
 
 <nav>
-<a href="#products">Sizes</a>
-<a href="#prices">Prices</a>
-<a href="#order">Order</a>
-<a href="#location">Location</a>
-<a href="#contact">Contact</a>
+    <a href="#products">Sizes</a>
+    <a href="#prices">Prices</a>
+    <a href="#order">Order</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
-Comfort Starts With The Right Bed
+    Comfort Starts With The Right Bed
 </section>
 
 <!-- BED SIZE TEMPLATES -->
 
 <section class="section" id="products">
-<h2>Available Bed Sizes</h2>
 
-<div class="products">
+    <h2>Available Bed Sizes</h2>
 
-<div class="card">
-<img src="Single.jpeg">
-<h3>Single</h3>
-<p>910 × 1880 mm</p>
-<p class="price">From R2650</p>
-</div>
+    <div class="products">
 
-<div class="card">
-<img src="3QBed.jpeg">
-<h3>3/4</h3>
-<p>1070 × 1880 mm</p>
-<p class="price">From R2750</p>
-</div>
+        <div class="card">
+            <img src="Single.jpeg">
+            <h3>Single</h3>
+            <p>910 × 1880 mm</p>
+            <p class="price">From R2650</p>
+        </div>
 
-<div class="card">
-<img src="Double.jpeg">
-<h3>Double</h3>
-<p>1370 × 1880 mm</p>
-<p class="price">From R3050</p>
-</div>
+        <div class="card">
+            <img src="3QBed.jpeg">
+            <h3>3/4</h3>
+            <p>1070 × 1880 mm</p>
+            <p class="price">From R2750</p>
+        </div>
 
-<div class="card">
-<img src="QueenBed.jpeg">
-<h3>Queen</h3>
-<p>1520 × 1880 mm</p>
-<p class="price">From R3200</p>
-</div>
+        <div class="card">
+            <img src="Double.jpeg">
+            <h3>Double</h3>
+            <p>1370 × 1880 mm</p>
+            <p class="price">From R3050</p>
+        </div>
 
-<div class="card">
-<img src="KingBed.jpeg">
-<h3>King</h3>
-<p>1830 × 1880 mm</p>
-<p class="price">From R4150</p>
-</div>
+        <div class="card">
+            <img src="QueenBed.jpeg">
+            <h3>Queen</h3>
+            <p>1520 × 1880 mm</p>
+            <p class="price">From R3200</p>
+        </div>
 
-</div>
+        <div class="card">
+            <img src="KingBed.jpeg">
+            <h3>King</h3>
+            <p>1830 × 1880 mm</p>
+            <p class="price">From R4150</p>
+        </div>
+
+    </div>
+
 </section>
 
 <!-- PRICE TABLE -->
 
 <section class="section" id="prices">
-<h2>Price List</h2>
 
-<table class="price-table">
-<thead>
-<tr>
-<th>Type</th><th>Single</th><th>3/4</th><th>Double</th><th>Queen</th><th>King</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Turn Free</td><td>2650</td><td>2750</td><td>3050</td><td>3200</td><td>4150</td></tr>
-<tr><td>Turnable</td><td>2750</td><td>2900</td><td>3250</td><td>3450</td><td>4400</td></tr>
-<tr><td>Pillow Top</td><td>2900</td><td>3000</td><td>3350</td><td>3500</td><td>4500</td></tr>
-<tr><td>Full Foam</td><td>3600</td><td>3950</td><td>4550</td><td>4650</td><td>5950</td></tr>
-<tr><td>Full Foam +</td><td>4250</td><td>4650</td><td>5550</td><td>5750</td><td>7650</td></tr>
-<tr><td>Pocket Coil</td><td>3700</td><td>3950</td><td>4550</td><td>4650</td><td>5950</td></tr>
-<tr><td>Pocket Coil +</td><td>4350</td><td>4650</td><td>5550</td><td>5750</td><td>7650</td></tr>
-</tbody>
-</table>
+    <h2>Price List</h2>
 
-<p>Choose brand/type from this table when ordering.</p>
+    <div class="table-wrapper">
+
+        <table class="price-table">
+
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Single</th>
+                    <th>3/4</th>
+                    <th>Double</th>
+                    <th>Queen</th>
+                    <th>King</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Turn Free</td>
+                    <td>2650</td>
+                    <td>2750</td>
+                    <td>3050</td>
+                    <td>3200</td>
+                    <td>4150</td>
+                </tr>
+
+                <tr>
+                    <td>Turnable</td>
+                    <td>2750</td>
+                    <td>2900</td>
+                    <td>3250</td>
+                    <td>3450</td>
+                    <td>4400</td>
+                </tr>
+
+                <tr>
+                    <td>Pillow Top</td>
+                    <td>2900</td>
+                    <td>3000</td>
+                    <td>3350</td>
+                    <td>3500</td>
+                    <td>4500</td>
+                </tr>
+
+                <tr>
+                    <td>Full Foam</td>
+                    <td>3600</td>
+                    <td>3950</td>
+                    <td>4550</td>
+                    <td>4650</td>
+                    <td>5950</td>
+                </tr>
+
+                <tr>
+                    <td>Full Foam +</td>
+                    <td>4250</td>
+                    <td>4650</td>
+                    <td>5550</td>
+                    <td>5750</td>
+                    <td>7650</td>
+                </tr>
+
+                <tr>
+                    <td>Pocket Coil</td>
+                    <td>3700</td>
+                    <td>3950</td>
+                    <td>4550</td>
+                    <td>4650</td>
+                    <td>5950</td>
+                </tr>
+
+                <tr>
+                    <td>Pocket Coil +</td>
+                    <td>4350</td>
+                    <td>4650</td>
+                    <td>5550</td>
+                    <td>5750</td>
+                    <td>7650</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <p>Choose brand/type from this table when ordering.</p>
+
 </section>
 
 <!-- ORDER FORM -->
 
 <section class="section" id="order">
-<h2>WhatsApp Order Request</h2>
 
-<form id="orderForm">
-<input id="custName" placeholder="Customer Name" required>
-<input id="custPhone" placeholder="Contact Number" required>
+    <h2>WhatsApp Order Request</h2>
 
-<select id="bedSize" required>
-<option value="">Bed Size</option>
-<option>Single</option>
-<option>3/4</option>
-<option>Double</option>
-<option>Queen</option>
-<option>King</option>
-</select>
+    <form id="orderForm">
 
-<select id="bedType" required>
-<option value="">Bed Type</option>
-<option>Turn Free</option>
-<option>Turnable</option>
-<option>Pillow Top</option>
-<option>Full Foam</option>
-<option>Full Foam +</option>
-<option>Pocket Coil</option>
-<option>Pocket Coil +</option>
-<option>Base Only</option>
-</select>
+        <input id="custName" placeholder="Customer Name" required>
 
-<input id="qty" type="number" value="1" min="1" placeholder="Quantity">
+        <input id="custPhone" placeholder="Contact Number" required>
 
-<button type="submit">Send Order via WhatsApp</button>
-</form>
+        <select id="bedSize" required>
+            <option value="">Bed Size</option>
+            <option>Single</option>
+            <option>3/4</option>
+            <option>Double</option>
+            <option>Queen</option>
+            <option>King</option>
+        </select>
+
+        <select id="bedType" required>
+            <option value="">Bed Type</option>
+            <option>Turn Free</option>
+            <option>Turnable</option>
+            <option>Pillow Top</option>
+            <option>Full Foam</option>
+            <option>Full Foam +</option>
+            <option>Pocket Coil</option>
+            <option>Pocket Coil +</option>
+            <option>Base Only</option>
+        </select>
+
+        <input id="qty" type="number" value="1" min="1" placeholder="Quantity">
+
+        <button type="submit">Send Order via WhatsApp</button>
+
+    </form>
+
 </section>
 
 <!-- GOOGLE MAP -->
 
 <section class="section" id="location">
-<h2>Our Location</h2>
 
-<div class="map">
-<iframe
-width="100%"
-height="350"
-frameborder="0"
-style="border:0"
-src="https://www.google.com/maps?q=101%20Dalmatian%20Close,%20Austin%20View,%20Midrand&output=embed"
-allowfullscreen>
-</iframe>
-</div>
+    <h2>Our Location</h2>
+
+    <div class="map">
+
+        <iframe
+            width="100%"
+            height="350"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps?q=101%20Dalmatian%20Close,%20Austin%20View,%20Midrand&output=embed"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
 </section>
 
 <!-- CONTACT -->
 
 <section class="section" id="contact">
-<h2>Contact</h2>
-<p>Email: <a href="mailto:netssupply45@gmail.com">netssupply45@gmail.com</a></p>
-<p>WhatsApp: +27 82 660 2020</p>
-<p>Address: 101 Dalmatian Close, Austin View, Midrand</p>
+
+    <h2>Contact</h2>
+
+    <p>
+        Email:
+        <a href="mailto:netssupply45@gmail.com">
+            netssupply45@gmail.com
+        </a>
+    </p>
+
+    <p>WhatsApp: +27 82 660 2020</p>
+
+    <p>
+        Address:
+        101 Dalmatian Close, Austin View, Midrand
+    </p>
+
 </section>
 
 <footer>
-© 2026 Nets Beds — All Rights Reserved
+    © 2026 Nets Beds — All Rights Reserved
 </footer>
 
-<a href="https://wa.me/27826602020" class="whatsapp-float" target="_blank">
-WhatsApp Us
+<a href="https://wa.me/27826602020"
+   class="whatsapp-float"
+   target="_blank">
+    WhatsApp Us
 </a>
 
 <script>
+
 document.getElementById("orderForm").addEventListener("submit", function(e){
-e.preventDefault();
-const msg = `Hello Nets Beds,
+
+    e.preventDefault();
+
+    const msg = `Hello Nets Beds,
 Order Request:
 Name: ${custName.value}
 Phone: ${custPhone.value}
 Size: ${bedSize.value}
 Type: ${bedType.value}
 Qty: ${qty.value}`;
-window.open("https://wa.me/27826602020?text="+encodeURIComponent(msg));
+
+    window.open(
+        "https://wa.me/27826602020?text=" + encodeURIComponent(msg)
+    );
+
 });
+
 </script>
 
 </body>
 </html>
-
 
 
 
