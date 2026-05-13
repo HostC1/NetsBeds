@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -83,7 +83,7 @@ nav a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
     gap: 24px;
-    max-width: 1000px;
+    width: 100%;
     margin: auto;
 }
 
@@ -112,24 +112,16 @@ nav a {
     font-weight: bold;
 }
 
-/* RESPONSIVE PRICE TABLE */
-
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-}
+/* PRICE TABLE */
 
 .price-table {
     width: 100%;
-    max-width: 1000px;
-    min-width: 700px;
-    margin: auto;
     border-collapse: collapse;
+    background: white;
+    table-layout: auto;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    background: white;
-    table-layout: fixed;
 }
 
 .price-table thead {
@@ -139,26 +131,21 @@ nav a {
 
 .price-table th,
 .price-table td {
-    padding: 16px 14px;
+    padding: 18px;
     text-align: center;
-    word-wrap: break-word;
+    border: 1px solid #ddd;
+    width: 16.6%;
 }
 
-.price-table th {
-    font-size: 15px;
-}
-
-.price-table tbody tr {
-    border-bottom: 1px solid #eee;
+.price-table th:first-child,
+.price-table td:first-child {
+    width: 20%;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 .price-table tbody tr:hover {
-    background: #f7fafc;
-}
-
-.price-table td:first-child {
-    font-weight: bold;
-    color: #2c3e50;
+    background: #f5f5f5;
 }
 
 /* FORM */
@@ -200,8 +187,7 @@ button:hover {
 /* MAP */
 
 .map {
-    max-width: 1000px;
-    margin: auto;
+    width: 100%;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 14px rgba(0,0,0,0.1);
@@ -261,14 +247,10 @@ footer {
         padding: 20px;
     }
 
-    .price-table {
-        min-width: 650px;
-    }
-
     .price-table th,
     .price-table td {
-        padding: 12px 10px;
-        font-size: 14px;
+        padding: 10px;
+        font-size: 13px;
     }
 
     nav {
@@ -360,89 +342,87 @@ footer {
 
     <h2>Price List</h2>
 
-    <div class="table-wrapper">
+    <table class="price-table">
 
-        <table class="price-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Single</th>
+                <th>3/4</th>
+                <th>Double</th>
+                <th>Queen</th>
+                <th>King</th>
+            </tr>
+        </thead>
 
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Single</th>
-                    <th>3/4</th>
-                    <th>Double</th>
-                    <th>Queen</th>
-                    <th>King</th>
-                </tr>
-            </thead>
+        <tbody>
 
-            <tbody>
-                <tr>
-                    <td>Turn Free</td>
-                    <td>2650</td>
-                    <td>2750</td>
-                    <td>3050</td>
-                    <td>3200</td>
-                    <td>4150</td>
-                </tr>
+            <tr>
+                <td>Turn Free</td>
+                <td>2650</td>
+                <td>2750</td>
+                <td>3050</td>
+                <td>3200</td>
+                <td>4150</td>
+            </tr>
 
-                <tr>
-                    <td>Turnable</td>
-                    <td>2750</td>
-                    <td>2900</td>
-                    <td>3250</td>
-                    <td>3450</td>
-                    <td>4400</td>
-                </tr>
+            <tr>
+                <td>Turnable</td>
+                <td>2750</td>
+                <td>2900</td>
+                <td>3250</td>
+                <td>3450</td>
+                <td>4400</td>
+            </tr>
 
-                <tr>
-                    <td>Pillow Top</td>
-                    <td>2900</td>
-                    <td>3000</td>
-                    <td>3350</td>
-                    <td>3500</td>
-                    <td>4500</td>
-                </tr>
+            <tr>
+                <td>Pillow Top</td>
+                <td>2900</td>
+                <td>3000</td>
+                <td>3350</td>
+                <td>3500</td>
+                <td>4500</td>
+            </tr>
 
-                <tr>
-                    <td>Full Foam</td>
-                    <td>3600</td>
-                    <td>3950</td>
-                    <td>4550</td>
-                    <td>4650</td>
-                    <td>5950</td>
-                </tr>
+            <tr>
+                <td>Full Foam</td>
+                <td>3600</td>
+                <td>3950</td>
+                <td>4550</td>
+                <td>4650</td>
+                <td>5950</td>
+            </tr>
 
-                <tr>
-                    <td>Full Foam +</td>
-                    <td>4250</td>
-                    <td>4650</td>
-                    <td>5550</td>
-                    <td>5750</td>
-                    <td>7650</td>
-                </tr>
+            <tr>
+                <td>Full Foam +</td>
+                <td>4250</td>
+                <td>4650</td>
+                <td>5550</td>
+                <td>5750</td>
+                <td>7650</td>
+            </tr>
 
-                <tr>
-                    <td>Pocket Coil</td>
-                    <td>3700</td>
-                    <td>3950</td>
-                    <td>4550</td>
-                    <td>4650</td>
-                    <td>5950</td>
-                </tr>
+            <tr>
+                <td>Pocket Coil</td>
+                <td>3700</td>
+                <td>3950</td>
+                <td>4550</td>
+                <td>4650</td>
+                <td>5950</td>
+            </tr>
 
-                <tr>
-                    <td>Pocket Coil +</td>
-                    <td>4350</td>
-                    <td>4650</td>
-                    <td>5550</td>
-                    <td>5750</td>
-                    <td>7650</td>
-                </tr>
-            </tbody>
+            <tr>
+                <td>Pocket Coil +</td>
+                <td>4350</td>
+                <td>4650</td>
+                <td>5550</td>
+                <td>5750</td>
+                <td>7650</td>
+            </tr>
 
-        </table>
+        </tbody>
 
-    </div>
+    </table>
 
     <p>Choose brand/type from this table when ordering.</p>
 
@@ -525,10 +505,7 @@ footer {
 
     <p>WhatsApp: +27 82 660 2020</p>
 
-    <p>
-        Address:
-        101 Dalmatian Close, Austin View, Midrand
-    </p>
+    <p>Address: 101 Dalmatian Close, Austin View, Midrand</p>
 
 </section>
 
